@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  deploy_dev:
+  deploy_dev_app2:
     runs-on: ubuntu-latest
     environment: dev
     steps:
@@ -24,10 +24,10 @@ jobs:
       - name: Deploy Dev
         run: echo Deploy to Dev sha ${{ github.sha }}
 
-  deploy_prod:
+  deploy_prod_app2:
     runs-on: ubuntu-latest
     environment: prod
-    needs: deploy_dev
+    needs: deploy_dev_app2
     steps:
       - uses: actions/checkout@v3
 
