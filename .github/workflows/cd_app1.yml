@@ -15,21 +15,21 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy_dev:
+  deploy_dev_app1:
     runs-on: ubuntu-latest
     environment: dev
     steps:
       - uses: actions/checkout@v3
 
-      - name: Deploy Dev
-        run: echo Deploy to Dev sha ${{ github.sha }}
+      - name: Deploy Dev App1
+        run: echo Deploy App1 to Dev sha ${{ github.sha }}
 
-  deploy_prod:
+  deploy_prod_app1:
     runs-on: ubuntu-latest
     environment: prod
-    needs: deploy_dev
+    needs: deploy_dev_app1
     steps:
       - uses: actions/checkout@v3
 
-      - name: Deploy Prod
-        run: echo Deploy to Prod sha ${{ github.sha }}
+      - name: Deploy Prod App1
+        run: echo Deploy App1 to Prod sha ${{ github.sha }}
