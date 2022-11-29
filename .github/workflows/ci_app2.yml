@@ -29,4 +29,4 @@ jobs:
     needs: build_test
     steps: 
       - name: Closing step App2
-        run: This is breaking Closing step App2
+        run: echo Closing step App2
